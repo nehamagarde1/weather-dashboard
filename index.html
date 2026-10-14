@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0b1120">
+  <title>SkyCast | Weather Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="dashboard">
+    <header class="topbar">
+      <a href="#" class="brand"><span>☀</span> SkyCast</a>
+      <span class="live"><i></i> LIVE WEATHER</span>
+    </header>
+
+    <section class="intro">
+      <p class="eyebrow">YOUR WEATHER, AT A GLANCE</p>
+      <h1>Weather Dashboard</h1>
+      <p>Discover live weather conditions across India.</p>
+    </section>
+
+    <section class="search-section">
+      <label for="citySearch">Search or select a city</label>
+
+      <div class="search-wrap">
+        <span class="search-icon">⌕</span>
+        <input id="citySearch" type="text"
+          placeholder="Search or select a city..."
+          autocomplete="off" role="combobox"
+          aria-expanded="false" aria-controls="cityList"
+          aria-autocomplete="list">
+
+        <button id="dropdownBtn" type="button"
+          aria-label="Open city dropdown"
+          aria-expanded="false">▾</button>
+
+        <div id="cityList" class="city-list"
+          role="listbox" hidden></div>
+      </div>
+
+      <p class="hint">⌕ Search by city name or click ▾ to browse cities.</p>
+    </section>
+
+    <div id="status" class="status" role="status"
+      aria-live="polite">Loading weather...</div>
+
+    <section id="weatherContent" hidden>
+      <article class="hero">
+        <div class="hero-copy">
+          <span class="eyebrow">CURRENT WEATHER</span>
+          <h2 id="cityName">Indore, India</h2>
+          <p id="currentDate" class="muted"></p>
+          <p id="condition" class="condition"></p>
+          <div class="temperature">
+            <span id="temperature">--</span><sup>°C</sup>
+          </div>
+          <p id="feelsLike" class="muted"></p>
+        </div>
+
+        <div class="weather-art">
+          <span id="weatherIcon">☀️</span>
+        </div>
+
+        <div class="hero-footer">
+          <span>✦</span>
+          <span id="daySummary">Live weather conditions</span>
+        </div>
+      </article>
+
+      <div class="section-heading">
+        <div>
+          <h3>Weather details</h3>
+          <p>Current conditions for your selected city</p>
+        </div>
+        <span class="live-text">● LIVE DATA</span>
+      </div>
+
+      <div class="details-grid">
+        <article class="detail-card">
+          <span class="detail-icon">💧</span>
+          <p>HUMIDITY</p>
+          <h3><span id="humidity">--</span><small>%</small></h3>
+          <span class="description">Relative humidity</span>
+        </article>
+
+        <article class="detail-card">
+          <span class="detail-icon">🌬️</span>
+          <p>WIND SPEED</p>
+          <h3><span id="windSpeed">--</span><small> km/h</small></h3>
+          <span class="description">Current wind speed</span>
+        </article>
+
+        <article class="detail-card">
+          <span class="detail-icon">🌡️</span>
+          <p>FEELS LIKE</p>
+          <h3><span id="feelsDetail">--</span><small>°C</small></h3>
+          <span class="description">Apparent temperature</span>
+        </article>
+
+        <article class="detail-card">
+          <span class="detail-icon">☁️</span>
+          <p>CLOUD COVER</p>
+          <h3><span id="cloudCover">--</span><small>%</small></h3>
+          <span class="description">Sky covered by clouds</span>
+        </article>
+      </div>
+
+      <p id="lastUpdated" class="last-updated"></p>
+    </section>
+
+    <footer>
+      <span>Made with ☁️ for weather lovers</span>
+      <span>Weather data: Open-Meteo</span>
+    </footer>
+  </main>
+</body>
+</html>
